@@ -12,7 +12,7 @@ const autoplay = React.useRef(
   )
 
 
-    return ( <div className="flex items-center justify-center w-full h-auto px-5 overflow-x-hidden pt-4" >
+    return ( <div className="flex items-center justify-center w-full h-auto  overflow-x-hidden" >
   <Carousel className="w-full"
  
   >
