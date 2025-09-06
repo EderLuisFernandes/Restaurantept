@@ -11,8 +11,8 @@ const Home = ()=>{
   <div className="px-5 pt-6 " ><Search/></div>
   <div className="pt-6 px-5"> <CategoryList/></div>
  
-  <div>
- <Carrosel/>
+  <div className="flex justify-center items-center">
+  <Carrosel/>
   </div>
   </>)
 }
