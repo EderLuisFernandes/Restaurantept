@@ -47,13 +47,12 @@
   --ring: 356 83% 51.6%;
   --radius: 0.75rem;
 }
-
 @layer base {
   * {
     @apply box-border;
   }
 
   body {
-    @apply text-foreground antialiased;
+    @apply bg-[#f4f4f5] text-foreground antialiased;
   }
 }
