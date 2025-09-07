@@ -5,7 +5,7 @@ import Search from "./_components/search"
 import Carrosel from "./_components/carrosel"
 import PorductList from "./_components/product-list"
 import { Button } from "./_components/ui/button"
-import { ArrowBigLeft, ArrowRight, ChevronsRightIcon } from "lucide-react"
+import {ChevronsRightIcon } from "lucide-react"
 
 
 const Home = ()=>{
