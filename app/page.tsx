@@ -7,6 +7,10 @@ import PorductList from "./_components/product-list"
 import { Button } from "./_components/ui/button"
 import {ChevronsRightIcon } from "lucide-react"
 import { db } from "./_lib/Prisma"
+import banner from "../public/promo-banner-01.png"
+import banner2 from "../public/promo-banner-02.png"
+import banner3 from "../public/landing-banner-1.png"
+import banner4 from "../public/landing-banner-2.png"
 
 
 const Home = async ()=>{
@@ -35,7 +39,12 @@ const product = await db.product.findMany({
   <div className="pt-6 px-5 "> <CategoryList/></div>
  
   <div className="flex justify-center items-center px-5  pt-4">
-  <Carrosel/>
+  <Carrosel
+    images={[
+      {src:banner,alt:"Promoção1"},
+      {src: banner2, alt:"Promoção 2"}
+    ]}
+  />
   </div>
   
   <div className="pt-3">
@@ -49,7 +58,17 @@ const product = await db.product.findMany({
   <PorductList product={product}/>
 
   </div>
-
+  
+  
+    <div className="flex justify-center items-center px-5  pt-4 object-cover">
+  <Carrosel 
+    images={[
+      {src:banner3,alt:"Promoção1"},
+      {src: banner4, alt:"Promoção 2"}
+    ]}
+   />
+  </div>
+  
  
   </>)
 }
