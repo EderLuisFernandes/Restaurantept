@@ -1,23 +1,20 @@
-import Image from "next/image";
-import { db } from "../_lib/Prisma";
 import ProductItem from "./product-items";
-
-const PorductList =  async() => {
-    const product = await db.product.findMany({
-        where:{
-            discountPercentage:{
-                gt:0
-            }
-        },
-        take: 10,
-        include:{
-            restaurant: {
-                select:{
-                    name: true,
+import { Prisma } from "@prisma/client";
+interface ProductListProp{
+    product: Prisma.ProductGetPayload<{
+            include:{
+                restaurant:{
+                    select:{
+                        name: true,
+                        imageUrl: true
+                    }
                 }
             }
-        }
-    });
+        }>[]
+}
+
+const PorductList =  async({product}: ProductListProp) => {
+    ;
     // [&::-webkit-scrollbar]:hidden juda aesconder o scrool
     return (  <div className="flex overflow-x-scroll [&::-webkit-scrollbar]:hidden px-5 pt-4 gap-3">
     {

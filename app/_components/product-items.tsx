@@ -9,7 +9,8 @@ interface productItemProps{
         include:{
             restaurant:{
                 select:{
-                    name: true
+                    name: true,
+                    imageUrl: true
                 }
             }
         }
@@ -40,7 +41,9 @@ const ProductItem = ({product}: productItemProps   ) => {
                 <span className="line-through text-muted-foreground text-xs">{ formatPrice(Number(product.price))}</span>
             )}
             </div>
-                <span className="text-muted-foreground text-xs">{product.restaurant.name}</span>
+            <div className="flex items-center gap-1">
+                <p className="text-muted-foreground text-xs">{product.restaurant.name}</p>
+            </div>
             </div>
         
         </div>
