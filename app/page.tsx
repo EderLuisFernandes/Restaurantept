@@ -11,6 +11,7 @@ import banner from "../public/promo-banner-01.png"
 import banner2 from "../public/promo-banner-02.png"
 import banner3 from "../public/landing-banner-1.png"
 import banner4 from "../public/landing-banner-2.png"
+import RestaurantList from "./_components/restauranList"
 
 
 const Home = async ()=>{
@@ -37,7 +38,7 @@ const product = await db.product.findMany({
   <Header/>
   <div className="px-5 pt-6 " ><Search/></div>
   <div className="pt-6 px-5 "> <CategoryList/></div>
- 
+ {/* banner */}
   <div className="flex justify-center items-center px-5  pt-4">
   <Carrosel
     images={[
@@ -46,7 +47,7 @@ const product = await db.product.findMany({
     ]}
   />
   </div>
-  
+   {/*  carrosel de produtos */}
   <div className="pt-3">
     <div className="px-5 flex justify-between items-center">
       <h2 className="font-semibold">Pedidos Recomendados</h2>
@@ -59,7 +60,7 @@ const product = await db.product.findMany({
 
   </div>
   
-  
+  {/* banner */}
     <div className="flex justify-center items-center px-5  pt-4 object-cover">
   <Carrosel 
     images={[
@@ -68,7 +69,19 @@ const product = await db.product.findMany({
     ]}
    />
   </div>
-  
+
+
+  <div className="pt-3">
+    <div className="px-5 flex justify-between items-center">
+      <h2 className="font-semibold">Restaurantes Recomendados</h2>
+      <Button variant="ghost" className=" hover:bg-transparent text-primary p-0 flex items-center justify-center">
+        Ver todos
+        <ChevronsRightIcon size={16}/>
+      </Button>
+    </div>
+ <RestaurantList/>
+
+  </div>
  
   </>)
 }

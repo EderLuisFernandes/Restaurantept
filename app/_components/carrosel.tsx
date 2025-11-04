@@ -11,13 +11,13 @@ interface CarroselProps{
 
 const Carrosel = ({images}:CarroselProps) => {
 const autoplay = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false })
+    Autoplay({ delay: 8000, stopOnInteraction: false })
   )
 
 
     return ( <div className="flex items-center justify-center w-full h-auto  overflow-x-hidden" >
   <Carousel className="w-full"
- 
+  plugins={[autoplay.current]}
   >
     <CarouselPrevious />
     <CarouselContent>

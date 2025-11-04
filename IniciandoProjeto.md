@@ -168,3 +168,11 @@ const config = {
 } 
 
 export default config -----
+
+para que  o di funcione eu preciso colocar um pagina com o [id] e dentro desssa pagina te ro page.tsx quando eu for pesquisar ele vai me retorna o numero do id 
+
+![alt text](image-1.png)
+
+## Fiz um componente unico onde eu tenho que usar o router para  que ele pegue tive que criar um folder _component para redenrizar uma image junto com o botão porem o botão vai precisar usar o router por isso ele esta separado.
+
+logo em seguida no componente principal fiz um desconto so para usar ele  em todos os lugares.

@@ -1,7 +1,9 @@
+"use-client"
 import { Prisma, Product } from "@prisma/client";
 import Image from "next/image";
 import { formatPrice,calculateProductsTotalPrice } from "../_helpers/price"
 import { ArrowDown01Icon, ArrowDownIcon } from "lucide-react";
+import Link from "next/link";
 
 
 interface productItemProps{
@@ -19,11 +21,11 @@ interface productItemProps{
 
 const ProductItem = ({product}: productItemProps   ) => {
     return ( 
-        <div className="space-y-2 w-[150px] min-w-[150px] ">
+       <Link className="w-[150px] min-w-[150px]" href={`/products/${product.id}`}>
+        <div className="space-y-2 w-full ">
             <div className="relative h-[150px] w-full">
             <Image src={product.imageUrl} alt="" fill className="rounded-md object-cover shadow-sm "/>
             {product.discountPercentage && (
-
             <div className="absolute top-2 left-2 bg-primary text-[#fff] rounded-full px-2 py-[2px] flex items-center justify-center gap-[1px] ">
                 <ArrowDownIcon size={12}/>
                 <span className="font-semibold text-xs">{product.discountPercentage} %</span>
@@ -47,6 +49,8 @@ const ProductItem = ({product}: productItemProps   ) => {
             </div>
         
         </div>
+       
+       </Link>
      );
 }
  
