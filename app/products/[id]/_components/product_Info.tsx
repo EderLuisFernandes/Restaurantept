@@ -40,7 +40,7 @@ const ProductInformation = ({product,complementProduct}:productDatailsProps) => 
         })
     }
 
-    return ( <div className="p-5 bg-white">
+    return ( <div className=" p-4 mt-[-1.5rem] bg-white rounded-tl-3xl rounded-tr-3xl  relative">
             {/* Imagem e nome */}
         <div className="flex items-center gap-1">
             <div className="relative h-7 w-7">
