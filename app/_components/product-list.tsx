@@ -16,7 +16,7 @@ interface ProductListProp{
 const PorductList =({product}: ProductListProp) => {
     ;
     // [&::-webkit-scrollbar]:hidden juda aesconder o scrool
-    return (  <div className="flex overflow-x-scroll [&::-webkit-scrollbar]:hidden px-5 pt-4 gap-3">
+    return (  <div className="flex justify-between overflow-x-scroll [&::-webkit-scrollbar]:hidden px-5 pt-4 gap-3">
     {
         product.map(product => <ProductItem key={product.id} product={product} />
         

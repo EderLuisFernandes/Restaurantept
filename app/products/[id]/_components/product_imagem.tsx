@@ -1,4 +1,5 @@
 "use client";
+import UseBackPage from "@/app/_components/ui/backpage";
 import { Button } from "@/app/_components/ui/button";
 import { Product } from "@prisma/client";
 import { ChevronLeftIcon } from "lucide-react";
@@ -10,16 +11,10 @@ interface ProductImageProp{
 }
 
 const ProductImage = ({product}:ProductImageProp) => {
-    const router = useRouter();
+    const back = UseBackPage()
 
 
-    const navegarback = ()=> {
-        if(window.history.length > 1){
-            router.back();
-        }else{
-            router.push("/")
-        }
-    };
+    
 
     return ( <div className="relative w-full h-[360px]">
             <Image
@@ -28,7 +23,7 @@ const ProductImage = ({product}:ProductImageProp) => {
              fill 
              className=" object-cover"/> 
             <Button
-            onClick={navegarback} 
+            onClick={back} 
             className=" absolute top-5 left-5 bg-white text-foreground  w-[40px] h-[40px] rounded-full hover:text-white" >
                 <ChevronLeftIcon size={16}/>
             </Button>

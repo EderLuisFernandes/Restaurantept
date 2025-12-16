@@ -40,7 +40,8 @@ const ProductInformation = ({product,complementProduct}:productDatailsProps) => 
         })
     }
 
-    return ( <div className=" p-4 mt-[-1.5rem] bg-white rounded-tl-3xl rounded-tr-3xl  relative">
+    return ( 
+    <div className=" p-4 mt-[-1.5rem] bg-white rounded-tl-3xl rounded-tr-3xl  relative">
             {/* Imagem e nome */}
         <div className="flex items-center gap-1">
             <div className="relative h-7 w-7">
@@ -116,6 +117,12 @@ const ProductInformation = ({product,complementProduct}:productDatailsProps) => 
             <h1 className="font-bold text-[32px] ">Sucos</h1>
             <PorductList product={complementProduct}/>
         </div>
+            <div className="mt-5">
+        <Button className="w-full font-semibold">
+            Adicionar a Sacola
+        </Button>
+
+            </div>
         </div> );
 }
  

@@ -2,19 +2,26 @@ import { Restaurant } from "@prisma/client";
 import { AlarmClock, BikeIcon, HeartIcon, HeartPlus,StarIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
+import { cn } from "../_lib/utils";
 
 interface RestaurantsProps{
-    restaurant: Restaurant
+    restaurant: Restaurant,
+    classname?: string
 }
+
 const formatCurrency = (value: number) => {
   return value.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
 };
-const RestaurantItems = ({restaurant}:RestaurantsProps) => {
-    return (  
-    <div className="space-y-3 max-w-[266px] min-w-[266px]">
+// Criei uma prop onde ue consigo alterar o tamonho da classname
+const RestaurantItems = ({restaurant, classname}:RestaurantsProps) => {
+    return ( 
+        <Link className={cn("max-w-[266px] min-w-[266px]", classname)} href={`/restaurants/${restaurant.id}`}>
+        
+    <div className= " w-full space-y-3 ">
         <div className="relative h-[136px] w-full" >
             <Image 
             src={restaurant.imageUrl} 
@@ -54,6 +61,7 @@ const RestaurantItems = ({restaurant}:RestaurantsProps) => {
             </div>
         </div>
     </div>
+        </Link> 
     );
 }
  

@@ -1,5 +1,5 @@
 "use-client"
-import { Prisma, Product } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import Image from "next/image";
 import { formatPrice,calculateProductsTotalPrice } from "../_helpers/price"
 import { ArrowDown01Icon, ArrowDownIcon } from "lucide-react";
